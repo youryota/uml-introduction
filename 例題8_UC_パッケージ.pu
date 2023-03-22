@@ -1,0 +1,14 @@
+@startuml ユースケース図
+
+    package 選択授業 
+    package 学生
+    package 先生
+    package Java応用ゼミ
+
+    選択授業-[bold]->学生
+    選択授業-[dashed]->先生
+        学生-[dotted]->Java応用ゼミ
+        先生-[hidden]->Java応用ゼミ
+    
+
+@enduml
