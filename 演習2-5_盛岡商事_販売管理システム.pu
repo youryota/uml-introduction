@@ -1,0 +1,10 @@
+@startuml 販売管理システム
+left to right direction
+actor 出荷担当者 #DDDDDD;line:black;line.bold;
+rectangle 販売管理システム {
+usecase 注文商品
+usecase 出荷状況
+}
+出荷担当者 --> 注文商品
+出荷担当者 --> 出荷状況
+@enduml
