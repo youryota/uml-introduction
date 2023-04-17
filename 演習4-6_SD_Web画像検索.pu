@@ -1,20 +1,21 @@
 @startuml
 hide footbox
-Actor ":ユーザー" as a1
-participant ":ブラウザ" as a2 <<boundary>>
-participant ":Web サーバー" as a3 <<entity>>
-participant ":画像サーバー" as a4 <<entity>>
-activate a1
-a1->a2:画像のリンクをクリックをする
-activate a2
-a2->a3:ファイル名伝達する
-activate a3
-a3->a4:該当画像検索する
-activate a4
-a4->a3:画像を閲覧可能状態に変更する
-deactivate a4
-a3->a2:画像ファイル再生する
-deactivate a3
-deactivate a2
-deactivate a1
+actor ":ユーザ" as user
+participant ":ブラウザ" as brauza
+participant ":Webサーバー" as Web
+participant ":画像サーバー" as image
+activate user
+user -> brauza :リンクボタンを押す
+activate brauza
+brauza -> Web :画像ファイル名と命令を渡す
+activate Web
+Web -> image :画像ファイルを探す
+activate image
+image -> image :画像ファイルを探す
+Web <-- image :画像ファイル
+deactivate image
+brauza <-- Web :画像ファイルとHTML
+user <-- brauza :画像の閲覧
+deactivate brauza
+deactivate user
 @enduml
