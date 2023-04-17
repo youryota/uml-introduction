@@ -1,0 +1,17 @@
+@startuml
+hide footbox
+participant "データ更新コントローラ:controller" as a1
+participant "ホテル:hotel" as a2
+participant ":予約" as a3
+activate a1
+a1->a2:予約操作呼び出し
+activate a2
+create a3
+a2->a3:<<create>>
+
+
+a2->a2:予約登録操作呼び出し
+activate a2
+deactivate a2
+
+@enduml

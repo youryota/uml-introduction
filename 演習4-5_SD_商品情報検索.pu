@@ -1,0 +1,30 @@
+@startuml
+hide footbox
+actor 会員 as u1
+participant ":商品検索画面" as a1 <<boundary>>
+participant ":商品" as a2 <<control>>
+participant ":注文" as a3 <<entity>>
+participant ":注文登録画面" as a4 <<entity>>
+activate u1
+u1->a1
+activate a1
+a1->a2
+activate a2
+create a3
+a2->a3:<<create>>生成()
+
+
+loop 
+create a4
+a2-->a4:<<create>>生成()
+a2->a3
+activate a3
+deactivate a3
+
+end loop
+a2-->a1
+deactivate a2
+a1->a1
+activate a1
+deactivate a1
+@enduml
