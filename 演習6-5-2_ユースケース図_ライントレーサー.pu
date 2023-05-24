@@ -1,0 +1,13 @@
+@startuml 演習6-5-2
+left to right direction
+actor ユーザー#DDDDDD;line:black;line.bold;
+actor 光センサー#DDDDDD;line:black;line.bold;
+actor 左右モーター#DDDDDD;line:black;line.bold;
+rectangle ラインレーサーシステム {
+usecase ラインの右境界線上を進む 
+}
+ユーザー -- ラインの右境界線上を進む
+ラインの右境界線上を進む -- 光センサー
+ラインの右境界線上を進む -- 左右モーター
+
+@enduml
