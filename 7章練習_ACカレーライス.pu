@@ -1,0 +1,19 @@
+@startuml ７章練習
+title カレーライス調理
+start
+:具材を洗う;
+fork
+:肉・野菜切る;
+fork
+:肉・野菜を炒める;
+fork 
+:ルーを溶かす;
+fork
+:肉・野菜をルーの鍋に入れて煮込む;
+end fork
+fork again
+:ご飯を炊く;
+end fork
+:盛り付ける;
+stop
+@enduml
