@@ -1,0 +1,10 @@
+@startuml 
+title ホテル予約
+start
+repeat
+:ユーザー名を入力する;
+:パスワードを入力する;
+repeat while (認証成功) -> [No]
+:予約する;
+stop
+@enduml
