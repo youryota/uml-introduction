@@ -1,0 +1,20 @@
+@startuml
+title コンビニ
+|ユーザーA|
+start
+:弁当をレジに持っていく;
+|ユーザーB|
+fork
+|ユーザーA|
+:お金を払う;
+|ユーザーB|
+:清算する;
+fork again
+if (温めますか？) then(yes)
+:弁当を温める;
+else (no)
+endif
+end fork
+|ユーザーA|
+:弁当を手に持つ;
+@enduml
